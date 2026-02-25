@@ -67,7 +67,7 @@ func (c *TokenConfig) Validate() error {
 	// Symbol
 	if strings.TrimSpace(c.Symbol) == "" {
 		errs = append(errs, "token symbol is required")
-	} else if !validSymbolRe.MatchString(strings.ToUpper(c.Symbol)) {
+	} else if !validSymbolRe.MatchString(c.Symbol) {
 		errs = append(errs, "token symbol must be 1-11 uppercase letters/digits (e.g. MTK, USDC)")
 	}
 
